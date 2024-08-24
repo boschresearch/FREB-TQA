@@ -12,20 +12,26 @@ pip install -r requirements.txt
 ```
 
 The repo contains the following folders:
+
 `dataset`: the source of the evaluation datasets. It contains three parts, corresponding to the three robustness aspects proposed.
+
 `code`: code for the perturbation functions, generating answers for different perturbations and evaluation.
+
 `scripts`: scripts for creating perturbations according to the perturbation functions and generating answers for perturbations.
 
 ## 2. Generating answers for different perturbations
 
 The current scripts support generating answers directly for **TaPas**, **Tapex**, **OmniTab** and **Qwen** models.
+
 To do so, simply running the scripts in the `scripts` folder.
+
 The scripts will create a folder `results` containing three subfolders, each corresponds to one aspects (1-->structure robustness, 2-->attention to relevant cells, 3-->aggregation/comparison robustness).
 
 For other models or to modify inputs (e.g., add demonstrations), one could generate all perturbations by running `code/merge.py`. This will create three different files, containing instances for all perturbation functions and datasets in terms of each robustness aspect.
 
 After that, simply run your models on the perturbations. The output result file should be in a json file, with each line a dictionary,
 `{"id": question_id, "pred_answer": some_value, "seed": seed_value, "dataset": dataset_info, "perturb": perturbation_method}`
+
 The above values must be included in the dictionary.
 
 ## 3. Evaluation
