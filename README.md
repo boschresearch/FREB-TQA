@@ -25,7 +25,7 @@ The current scripts support generating answers directly for **TaPas**, **Tapex**
 
 To do so, simply running the scripts in the `scripts` folder.
 
-The scripts will create a folder `results` containing three subfolders, each corresponds to one aspects (1-->structure robustness, 2-->attention to relevant cells, 3-->aggregation/comparison robustness).
+The scripts will create a folder `results` containing three subfolders, each correspond to one aspect (1-->structure robustness, 2-->attention to relevant cells, 3-->aggregation/comparison robustness).
 
 For other models or to modify inputs (e.g., add demonstrations), one could generate all perturbations by running `code/merge.py`. This will create three different files, containing instances for all perturbation functions and datasets in terms of each robustness aspect.
 
