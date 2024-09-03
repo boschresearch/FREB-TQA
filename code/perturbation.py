@@ -398,7 +398,7 @@ def transposed(table: dict, seed: int, answer: list) -> dict:
     added_rows = [header] + rows
     # transpose
     transposed = [[row[i] for row in added_rows] for i in range(fields)]
-    return {'rows': transposed[1:], 'header': [str(i) for i in range(len(transposed[0]))]}
+    return {'rows': transposed, 'header': [str(i) for i in range(len(transposed[0]))]}
 
 
 # ===========================attention to relevant cells=====================================
