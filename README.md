@@ -11,6 +11,13 @@ git clone https://github.com/boschresearch/FREB-TQA.git && cd FREB-TQA
 pip install -r requirements.txt
 ```
 
+Download the `evaluator.py` from https://github.com/ppasupat/WikiTableQuestions/blob/master/evaluator.py and put it into the `code` folder. Since this file is written in Python 2 but not 3, we need to make some adapations. More specifically:
+
+1. Comment out codes from line 346 to line 395 (`def main()`)
+2. Replace all occurrences of `ur` to `r` in the `re.sub` function.
+3. Replace `basestring` to `str` in line 112 and delete `long` in line 134.
+4. Comment out line 58-62.
+
 The repo contains the following folders:
 
 `dataset`: the source of the evaluation datasets. It contains three parts, corresponding to the three robustness aspects proposed.
@@ -42,6 +49,12 @@ If you generate answers by running the provided scripts, simply run the followin
 If you merge all perturbations, run:
 `python evaluation.py --model_path path_to_the_model_generating_answers  --seed  perturbation_seed  --part  robustness_aspect_to_evaluate  --merge  --merge_path  path_to_the_merged_file `
 The evaluation scripts will create a json file for each aspect+dataset+seed+model, e.g., `{system}_{dataset}_{seed}_{aspect}.json`
+
+## License
+
+The dataset is licensed under CC-BY-SA-4.0.
+
+The code is licensed under ACPL-3.0
 
 ## Cite
 
